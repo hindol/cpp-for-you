@@ -14,3 +14,11 @@ Of course you are not allowed to touch the *main()* function.
 Look inside **00 References** directory for an example.
 
 Good luck and have fun! :)
+
+## How to Download
+
+> Either you can use *git* to clone this repository
+
+OR
+
+> simply download everything as a zip file. Link is available at the top-left corner.
