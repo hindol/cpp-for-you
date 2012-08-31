@@ -23,6 +23,12 @@ OR
 
 > simply download everything as a zip file. Link is available at the top-left corner.
 
+## How to Compile
+
+Using **g++**,
+
+    $ g++ main.cpp <other cpp files (if any)>
+
 ## Why does this page have only 2/3 Exercises?
 
 This page is still in the making.
