@@ -27,4 +27,4 @@ OR
 
 This page is still in the making.
 
-*I will peridically release new exercises.*
+*I will periodically release new exercises.*
