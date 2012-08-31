@@ -27,9 +27,9 @@ const ValueT &Array::operator [](SizeT index) const
 
 ValueT &Array::operator [](SizeT index)
 {
-	return const_cast<ValueT &>(
-			static_cast<const Array>(*this)[index]
-		);
+    return const_cast<ValueT &>(
+            static_cast<const Array>(*this)[index]
+        );
 }
 
 void Array::Resize(SizeT newSize)
