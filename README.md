@@ -1,4 +1,4 @@
-cpp-for-you
+C++ for You
 ===========
 
 A series of C++ tutorials aimed at C experts.
@@ -22,3 +22,9 @@ Good luck and have fun! :)
 OR
 
 > simply download everything as a zip file. Link is available at the top-left corner.
+
+## Why does this page have only 2/3 Exercises?
+
+This page is still in the making.
+
+*I will peridically release new exercises.*
