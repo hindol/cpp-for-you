@@ -1,9 +1,9 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-// Change this to float if you need Array of floats etc.
-typedef int             ValueT;
-typedef unsigned int    SizeT;
+typedef int             ValueT; // Change this to float if you need Array of floats etc.
+typedef unsigned int    SizeT;  // Since array size cannot be negative, it is common
+                                // practice to use unsigned int here.
 
 class Array
 {
@@ -35,10 +35,11 @@ public:
     version.
     */
 
-    // Accessor, e.g. ValueT var = array[i]
+    // Accessor, e.g. ValueT var = array[i], trying to assign raises
+    // compiler error. E.g. array[i] = var2 // ERROR
     const ValueT &operator [](SizeT index) const;
 
-    // Modifier, e.g. array[i] = var
+    // Accessor + Modifier, e.g. ValueT var = array[i], array[i] = var2
     ValueT &operator [](SizeT index);
 
     void Resize(SizeT newSize);
