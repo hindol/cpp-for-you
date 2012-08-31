@@ -32,6 +32,7 @@ ValueT &Array::operator [](SizeT index)
         );
 }
 
+// TODO
 void Array::Resize(SizeT newSize)
 {
 }
