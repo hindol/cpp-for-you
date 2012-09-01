@@ -45,6 +45,7 @@ void Array::Reserve(SizeT newCapacity)
 	}
 }
 
+// TODO
 void Array::Resize(SizeT newSize)
 {
 	if (newSize > Capacity())
