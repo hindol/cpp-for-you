@@ -37,7 +37,12 @@ ValueT &Array::operator [](SizeT index)
 // TODO
 void Array::Reserve(SizeT newCapacity)
 {
-	// Do reallocation
+	// Note that Reserve() can only *increase* the capacity.
+	// If newCapacity < Capacity() it does nothing.
+	if (newCapacity > Capacity())
+	{
+		// Do reallocation
+	}
 }
 
 void Array::Resize(SizeT newSize)
