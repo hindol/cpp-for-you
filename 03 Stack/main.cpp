@@ -1,24 +1,24 @@
-#include "list.h"
+#include "stack.h"
 #include <cassert>
 #include <iostream>
 
 int main(int argc, char *argv[])
 {
-    List list;
+    Stack stack;
 
-    list.PushBack(1);
-    list.PushFront(2);
-    list.PushBack(3);
-    list.PushFront(4);
-    list.PushBack(5);
+    stack.Push(1);
+    stack.Push(2);
+    stack.Push(3);
+    stack.Push(4);
+    stack.Push(5);
 
-    *(list.RBegin()) = 10;
+    assert(stack.Size() == 5);
 
-    std::cout << list.Size() << std::endl;
-
-    for (List::ReverseIterator it = list.RBegin(); it != list.REnd(); ++it)
+    std::cout << "Should print \'5, 4, 3, 2, 1,\'" << std::endl;
+    while (stack.Size() > 0)
     {
-    	std::cout << *it << ", ";
+    	std::cout << stack.Top() << ", ";
+        stack.Pop();
     }
     std::cout << std::endl;
 
