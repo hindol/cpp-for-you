@@ -1,8 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include <iterator>
-
 typedef int      ValueT;
 typedef unsigned SizeT;
 
@@ -16,53 +14,15 @@ struct Node
 	Node *next;
 };
 
-template <class ValueType>
-struct ListIterator : std::iterator<std::bidirectional_iterator_tag, ValueType>
-{
-	ListIterator(const ListIterator &other) : cur(other.cur) {}
-
-	ListIterator &operator =(const ListIterator &other)
-	{ cur = other.cur; return *this; }
-	
-	~ListIterator() {}
-
-	ValueType &operator *() const
-	{ return cur->value; }
-
-	friend bool operator !=(const ListIterator &lhs, const ListIterator &rhs)
-	{ return lhs.cur != rhs.cur; }
-	
-	friend bool operator ==(const ListIterator &lhs, const ListIterator &rhs)
-	{ return lhs.cur == rhs.cur; }
-
-	ListIterator operator ++()
-	{ cur = cur->next; return *this; }
-
-	ListIterator operator ++(int)
-	{ ListIterator copy(*this); cur = cur->next; return copy; }
-
-	ListIterator operator --()
-	{ cur = cur->prev; return *this; }
-
-	ListIterator operator --(int)
-	{ ListIterator copy(*this); cur = cur->prev; return copy; }
-
-	ValueType *operator ->() const
-	{ return &(cur->value); }
-
-private:
-	ListIterator(Node *init) : cur(init) {}
-
-	Node *cur;
-
-	friend class List;
-};
+#include "list_iterator.h" // Needs definition of Node
 
 class List
 {
 public:
-	typedef ListIterator<ValueT> 		Iterator;
-	typedef ListIterator<const ValueT>	ConstIterator;
+	typedef ListIterator<ValueT> 				Iterator;
+	typedef ListIterator<const ValueT>			ConstIterator;
+	typedef ListReverseIterator<ValueT> 		ReverseIterator;
+	typedef ListReverseIterator<const ValueT>	ConstReverseIterator;
 
 	List() : head(0L), tail(0L), size(0) {}
 	~List();
@@ -103,11 +63,11 @@ public:
 	Iterator End()
 	{ Iterator end(0L); return end; }
 
-	Iterator RBegin()
-	{ Iterator rbegin(tail); return rbegin; }
+	ReverseIterator RBegin()
+	{ ReverseIterator rbegin(tail); return rbegin; }
 
-	Iterator REnd()
-	{ Iterator rend(0L); return rend; }
+	ReverseIterator REnd()
+	{ ReverseIterator rend(0L); return rend; }
 
 	ConstIterator CBegin()
 	{ ConstIterator cbegin(head); return cbegin; }
@@ -115,11 +75,11 @@ public:
 	ConstIterator CEnd()
 	{ ConstIterator cend(0L); return cend; }
 
-	ConstIterator CRBegin()
-	{ ConstIterator crbegin(tail); return crbegin; }
+	ConstReverseIterator CRBegin()
+	{ ConstReverseIterator crbegin(tail); return crbegin; }
 
-	ConstIterator CREnd()
-	{ ConstIterator crend(0L); return crend; }
+	ConstReverseIterator CREnd()
+	{ ConstReverseIterator crend(0L); return crend; }
 
 private:
 	Node *head;

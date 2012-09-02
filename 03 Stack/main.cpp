@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     std::cout << list.Size() << std::endl;
 
-    for (List::Iterator it = list.Begin(); it != list.End(); ++it)
+    for (List::ReverseIterator it = list.RBegin(); it != list.REnd(); ++it)
     {
     	std::cout << *it << ", ";
     }
