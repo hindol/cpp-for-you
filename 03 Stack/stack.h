@@ -3,21 +3,21 @@
 
 #include "list.h"
 
-typedef int			ValueT;
-typedef unsigned	SizeT;
-
 class Stack
 {
 public:
-	SizeT Size() const;
+    typedef int         ValueT;
+    typedef unsigned    SizeT;
 
-	void Push(ValueT value);
+    SizeT Size() const;
 
-	ValueT &Top();
+    void Push(ValueT value);
 
-	const ValueT &Top() const;
+    ValueT &Top();
 
-	void Pop();
+    const ValueT &Top() const;
+
+    void Pop();
 };
 
 #endif // STACK_H

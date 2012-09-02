@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     std::cout << "Should print \'5, 4, 3, 2, 1,\'" << std::endl;
     while (stack.Size() > 0)
     {
-    	std::cout << stack.Top() << ", ";
+        std::cout << stack.Top() << ", ";
         stack.Pop();
     }
     std::cout << std::endl;
