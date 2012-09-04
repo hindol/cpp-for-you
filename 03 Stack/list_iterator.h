@@ -3,10 +3,11 @@
 
 #include <iterator>
 
-template <class ValueType>
+template <typename ValueType>
 struct ListIterator : std::iterator<std::bidirectional_iterator_tag, ValueType>
 {
-    ListIterator(const ListIterator &other) : cur(other.cur) {}
+    template <typename OtherValueType>
+    ListIterator(const ListIterator<OtherValueType> &other) : cur(other.cur) {}
 
     ListIterator &operator =(const ListIterator &other)
     { cur = other.cur; return *this; }
@@ -43,6 +44,7 @@ private:
     Node *cur;
 
     friend class List;
+    friend class ListIterator<const ValueType>;
 };
 
 template <class ValueType>
