@@ -1,0 +1,1 @@
+    Feel free to follow (or ignore) the highly standardized Linked List interface.
